@@ -2,5 +2,25 @@
   "dependencies": {
     "canvas": "^3.2.0",
     "fs": "^0.0.1-security"
-  }
+  },
+  "name": "ginonft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kliti72/ginoNFT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kliti72/ginoNFT/issues"
+  },
+  "homepage": "https://github.com/kliti72/ginoNFT#readme"
 }
