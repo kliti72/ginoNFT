@@ -235,6 +235,21 @@ const actions = [
 }
 
 const server = http.createServer((req, res) => {
+
+    if (req.url === '/favicon.ico') {
+    const icoPath = path.join(__dirname, 'favicon.ico'); // assicurati che sia qui
+    fs.readFile(icoPath, (err, data) => {
+      if (err) {
+        res.writeHead(404);
+        res.end();
+      } else {
+        res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+        res.end(data);
+      }
+    });
+    return;
+  }
+  
   if (req.url === '/') {
     const files = fs.readdirSync(outputDir)
                     .filter(f => f.endsWith('.png'))
@@ -248,6 +263,7 @@ const server = http.createServer((req, res) => {
     <html lang="it">
     <head>
       <meta charset="UTF-8">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
       <title>Vetrina Gino</title>
       <style>
         body { font-family: sans-serif; background: #f0f0f0; margin:0; padding:0;}
